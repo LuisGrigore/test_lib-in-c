@@ -1,0 +1,1 @@
+char *long_string(long l);

@@ -31,23 +31,11 @@ void test(struct s_test_details details, bool (*comp_funct)(char *, char *), cha
 	}
 	test_fail(details, expected, actual);
 }
-
-bool comp_byte(char *expected, char *actual)
-{
-	if(*expected == *actual)
-		return true;
-	return false;
-}
-
-bool comp_bytes(char *expected, char *actual, unsigned int size)
-{
-	if(strncmp(expected,actual, size) == 0)
-		return true;
-	return false;
-}
-bool is_equal(char *actual, char *expected)
+bool comp_bytes(char *expected, char *actual)
 {
 	if(actual == expected)
+	return true;
+	if(strcmp(expected,actual) == 0)
 		return true;
 	return false;
 }
